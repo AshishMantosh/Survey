@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} - Login
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'authentication/style.css' %}" type="text/css" media="screen">
+
+{% for message in messages %}
+<h3>{{ message }}</h3>
+{% endfor %}
+
+<div class="login"> 
+    <h1>Log in</h1>
+    <form method="POST" action="{% url 'authentication:login' %}">
+        {% csrf_token %}
+        <p>Username:</p>
+        <input type="text" name="username" placeholder="Username" required="required"/> 
+        <p>Password:</p>
+        <input type="password" name="password" placeholder="Password" required="required"/>
+        <p><button type="submit">Log in</button></p>
+        <p><a href="{% url 'authentication:register' %}">Not registered? Sign up</a></p>
+    </form>
+</div>
+
+{% endblock %}

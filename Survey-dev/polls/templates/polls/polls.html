@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} - Poll Questions
+{% endblock %}
+
+{% block content %}
+<h3>Welcome, {{ username }}</h3>
+
+<p>
+{% for question in questions %}
+    <ul>
+        <li><a href="{% url 'polls:vote' username question.id %}">{{ question }}</a></li>
+    </ul>
+{% endfor %}
+</p>
+{% endblock %}

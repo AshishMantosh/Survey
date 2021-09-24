@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ block.super }} - Vote
+{% endblock %}
+
+{% block content %}
+<h3>{{ question.question_text }}</h3>
+<form method="POST" action="{% url 'polls:vote' username question.id %}">
+{% csrf_token %}
+{% for option in options %}
+    <ul>
+    <li>
+    <input type="radio" name="selected_option" value="{{ option.id }}">
+    <label>{{ option.option_text }}</label>
+    </li>
+    </ul>
+{% endfor %}
+<input type="submit" value="vote" >
+</form>
+{% endblock %}

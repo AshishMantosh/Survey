@@ -1,0 +1,23 @@
+- Open Survey folder in vs code
+- Open terminal and create a virtual environment: python3 -m venv Survey-venv
+- Activate the virtual environment: source Survey-venv/bin/activate
+- To get out of this virtual environment: deactivate
+- The default python inside this environment is python3
+- Install django: python -m pip install django
+- Check django version: django-admin --version
+- Create the core project: django-admin startproject core
+- Rename the core folder to Survey-dev
+- Go into the Survey-dev directory to find the manage.py file and core app
+
+- To setup PostgreSQL, download it from its official website, you will get PGAdmin with the installer.
+- Make the neccessary changes in core project's Settings.py file for database Settings.py
+- Install psycopg2, installation will fail inside virtual environment as 'pg_config' is not a part of PATH environment variable:
+    - open Terminal, find pg_config by: sudo find / -name pg_config
+    - once you find the location, add to the PATH in the virtual environment : export PATH={location}:$PATH 
+    - install psycopg2 in the virtual environment: pip install psycopg2
+- Upgrade pip in virtual environment: python3 -m pip install --upgrade pip   
+- Install Pillow next, in the virtual environment: python3 -m pip install --upgrade Pillow
+- We need to migrate the database to PostgreSQL next by running:
+    - python manage.py makemigrations
+    - python manage.py migrate
+- Open PGAdmin, go to Database the Schemas then Tables
