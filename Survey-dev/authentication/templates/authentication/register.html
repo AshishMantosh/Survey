@@ -16,7 +16,7 @@
 
 <div class="register">
     <h1>Sign Up</h1>
-    <form action="" method="POST">
+    <form action="{% url 'authentication:register' %}" method="POST">
     {% csrf_token %}
         <p>Email ID:</p>
         <input type="email" name="email_id" placeholder="Email ID" required="required"/>
