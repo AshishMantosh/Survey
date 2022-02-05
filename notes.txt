@@ -8,6 +8,8 @@
 - Create the core project: django-admin startproject core
 - Rename the core folder to Survey-dev
 - Go into the Survey-dev directory to find the manage.py file and core app
+- Created an app named polls, 'python manage.py startapp polls'
+- Created admin super user, 'python manage.py createsuperuser'
 
 - To setup PostgreSQL, download it from its official website, you will get PGAdmin with the installer.
 - Make the neccessary changes in core project's Settings.py file for database Settings.py
