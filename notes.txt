@@ -1,5 +1,5 @@
 - Open Survey folder in vs code
-- Open terminal and create a virtual environment: python3 -m venv Survey-venv
+- Open vs code terminal and create a virtual environment: python3 -m venv Survey-venv
 - Activate the virtual environment: source Survey-venv/bin/activate
 - To get out of this virtual environment: deactivate
 - The default python inside this environment is python3
