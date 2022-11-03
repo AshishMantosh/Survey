@@ -17,6 +17,7 @@
     - open Terminal, find pg_config by: sudo find / -name pg_config
     - once you find the location, add to the PATH in the virtual environment : export PATH={location}:$PATH 
     - install psycopg2 in the virtual environment: pip install psycopg2
+    - do all the above sub steps inside the virtual environment
 - Upgrade pip in virtual environment: python3 -m pip install --upgrade pip   
 - Install Pillow next, in the virtual environment: python3 -m pip install --upgrade Pillow
 - We need to migrate the database to PostgreSQL next by running:
